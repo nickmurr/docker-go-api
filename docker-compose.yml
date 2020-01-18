@@ -1,0 +1,29 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:latest"
+    container_name: "postgres"
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgress
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
+  api:
+    depends_on:
+      - postgres
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    environment:
+      - BIND_ADDR=:5000
+      - LOG_LEVEL=debug
