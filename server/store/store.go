@@ -3,9 +3,7 @@ package store
 import (
 	"database/sql"
 	"fmt"
-	_ "github.com/golang-migrate/migrate/v4"
-	_ "github.com/golang-migrate/migrate/v4/database/postgres"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+
 	_ "github.com/lib/pq"
 )
 
@@ -21,14 +19,13 @@ func New(config *Config) *Store {
 }
 
 func (s *Store) Open() error {
-	url := fmt.Sprintf("postgresql://postgres:password@postgres:5432/example?sslmode=disable")
+	url := fmt.Sprintf("user=postgres password=postgres host=postgres dbname=postgres port=5432 sslmode=disable")
+	// url := fmt.Sprintf("postgresql://postgres:password@postgres:5432?sslmode=disable")
 
 	db, err := sql.Open("postgres", url)
 	if err != nil {
 		return err
 	}
-
-	// m, err := migrate.NewMigration()
 
 	if err := db.Ping(); err != nil {
 		fmt.Printf("Error while ping DB: %v", err)
