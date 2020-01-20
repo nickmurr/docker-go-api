@@ -19,7 +19,7 @@ func New(config *Config) *Store {
 }
 
 func (s *Store) Open() error {
-	url := fmt.Sprintf("user=postgres password=postgres host=postgres dbname=postgres port=5432 sslmode=disable")
+	url := fmt.Sprintf("user=postgres password=docker host=postgres dbname=postgres port=5432 sslmode=disable")
 	// url := fmt.Sprintf("postgresql://postgres:password@postgres:5432?sslmode=disable")
 
 	db, err := sql.Open("postgres", url)

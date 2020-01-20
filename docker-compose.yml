@@ -1,18 +1,19 @@
 version: "3"
 services:
-#  postgres:
-#   image: "postgres:latest"
+  #  postgres:
+  #   image: "postgres:latest"
   postgres:
-    image: "postgres:latest"
+    # image: "postgres:latest"
+    build: ./postgres-db
     ports:
       - 7557:5432
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=postgres
       - DATABASE_HOST=postgres
-#    volumes:
-#      - ./postgres-data:/var/lib/postgresql/data
+    volumes:
+      - ./postgres-dat:/var/lib/postgresql/data
   nginx:
     restart: always
     build:
@@ -29,14 +30,17 @@ services:
     environment:
       - BIND_ADDR=:5000
       - LOG_LEVEL=debug
-  pgadmin:
-   image: dpage/pgadmin4
-   container_name: pgadmin_container
-   environment:
-     - PGADMIN_DEFAULT_EMAIL=postgres
-     - PGADMIN_DEFAULT_PASSWORD=postgres
-   depends_on:
-     - postgres
-   ports:
-     - "5050:80"
-   restart: always
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: pgadmin_container
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=postgres
+  #     - PGADMIN_DEFAULT_PASSWORD=postgres
+  #   depends_on:
+  #     - postgres
+  #   ports:
+  #     - "5050:80"
+  #   restart: always
+# psql -h localhost -p 7557 -U postgres postgres
+
+# docker run -v /home/nikita/mine/docker/docker-go-api/server/migrations:/migrations --network host migrate/migrate -path=/migrations -database "postgresql://postgres:docker@localhost:7557/postgres?sslmode=disable" up
