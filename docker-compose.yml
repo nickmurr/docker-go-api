@@ -1,18 +1,18 @@
 version: "3"
 services:
-  # postgres:
-  #   image: "postgres:latest"
+#  postgres:
+#   image: "postgres:latest"
   postgres:
     image: "postgres:latest"
     ports:
-      - "5433:5432"
+      - 7557:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
       - DATABASE_HOST=postgres
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+#    volumes:
+#      - ./postgres-data:/var/lib/postgresql/data
   nginx:
     restart: always
     build:
@@ -29,14 +29,14 @@ services:
     environment:
       - BIND_ADDR=:5000
       - LOG_LEVEL=debug
-  # pgadmin:
-  #   image: dpage/pgadmin4
-  #   container_name: pgadmin_container
-  #   environment:
-  #     - PGADMIN_DEFAULT_EMAIL=postgres
-  #     - PGADMIN_DEFAULT_PASSWORD=postgres
-  #   depends_on:
-  #     - postgres
-  #   ports:
-  #     - "5050:80"
-  #   restart: always
+  pgadmin:
+   image: dpage/pgadmin4
+   container_name: pgadmin_container
+   environment:
+     - PGADMIN_DEFAULT_EMAIL=postgres
+     - PGADMIN_DEFAULT_PASSWORD=postgres
+   depends_on:
+     - postgres
+   ports:
+     - "5050:80"
+   restart: always
