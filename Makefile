@@ -10,3 +10,6 @@ migrate-down:
 pt:
 	psql -h localhost -p 7557 -U postgres postgres
 
+.PHONY: test-go
+test-go:
+	docker exec -it docker-examples_api_1 go test -v -coverprofile=c.out -timeout 30s ./...

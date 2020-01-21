@@ -33,15 +33,14 @@ func (s *Store) Open() error {
 		return err
 	}
 
-
 	s.db = db
 
 	c := make(chan *model.User)
 	go func() {
 
 		user, err := s.User().Create(&model.User{
-			Email:             "mail@gmail.com",
-			EncryptedPassword: "1234",
+			Email:    "mail@gmail.com",
+			Password: "1234567",
 		})
 
 		if err != nil {
