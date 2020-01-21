@@ -31,6 +31,7 @@ services:
     environment:
       - BIND_ADDR=:5000
       - LOG_LEVEL=debug
+      - DATABASE_URL=user=postgres password=docker host=postgres dbname=postgres port=5432 sslmode=disable
 volumes:
   data:
     external: true

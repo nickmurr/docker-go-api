@@ -8,8 +8,9 @@ import (
 )
 
 type Store struct {
-	config *Config
-	db     *sql.DB
+	config         *Config
+	db             *sql.DB
+	UserRepository *UserRepository
 }
 
 func New(config *Config) *Store {
@@ -19,7 +20,7 @@ func New(config *Config) *Store {
 }
 
 func (s *Store) Open() error {
-	url := fmt.Sprintf("user=postgres password=docker host=postgres dbname=postgres port=5432 sslmode=disable")
+	url := fmt.Sprintf(s.config.DatabaseURL)
 	// url := fmt.Sprintf("postgresql://postgres:password@postgres:5432?sslmode=disable")
 
 	db, err := sql.Open("postgres", url)
@@ -39,4 +40,16 @@ func (s *Store) Open() error {
 
 func (s *Store) Close() {
 	_ = s.db.Close()
+}
+
+func (s *Store) User() *UserRepository {
+	if s.UserRepository != nil {
+		return s.UserRepository
+	}
+
+	s.UserRepository = &UserRepository{
+		store: s,
+	}
+
+	return s.UserRepository
 }
