@@ -3,6 +3,7 @@ package store
 import (
 	"database/sql"
 	"fmt"
+	"github.com/nickmurr/go-http-rest-api/model"
 
 	_ "github.com/lib/pq"
 )
@@ -33,7 +34,25 @@ func (s *Store) Open() error {
 		return err
 	}
 
+
 	s.db = db
+
+	c := make(chan *model.User)
+	go func() {
+
+		user, err := s.User().Create(&model.User{
+			Email:             "mail@gmail.com",
+			EncryptedPassword: "1234",
+		})
+
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		c <- user
+
+	}()
+	fmt.Println(<-c)
 
 	return nil
 }
