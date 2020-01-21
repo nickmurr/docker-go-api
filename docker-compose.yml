@@ -11,8 +11,16 @@ services:
       - DATABASE_HOST=postgres
     volumes:
       - data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   migrate:
+    restart: on-failure
     build: ./migrator
+    depends_on:
+      - postgres
     links:
       - postgres
   nginx:
@@ -23,6 +31,7 @@ services:
     ports:
       - "3050:80"
   api:
+    restart: on-failure
     depends_on:
       - postgres
     build:
@@ -35,5 +44,3 @@ services:
 volumes:
   data:
     external: true
-networks:
-  new:
