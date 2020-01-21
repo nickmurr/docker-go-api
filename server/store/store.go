@@ -22,7 +22,6 @@ func New(config *Config) *Store {
 
 func (s *Store) Open() error {
 	url := fmt.Sprintf(s.config.DatabaseURL)
-	// url := fmt.Sprintf("postgresql://postgres:password@postgres:5432?sslmode=disable")
 
 	db, err := sql.Open("postgres", url)
 	if err != nil {
