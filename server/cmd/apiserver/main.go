@@ -25,9 +25,7 @@ func main() {
 		log.Fatalf("Error while reading config: %v", err)
 	}
 
-	s := apiserver.New(config)
-
-	if err := s.Start(); err != nil {
+	if err := apiserver.Start(config); err != nil {
 		log.Fatalf("Error: %v", err)
 	}
 
