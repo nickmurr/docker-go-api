@@ -1,16 +1,16 @@
 package store
 
 import (
-	"database/sql"
 	"fmt"
-	"github.com/nickmurr/go-http-rest-api/model"
-
+	_ "github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/github"
+	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 )
 
 type Store struct {
 	config         *Config
-	db             *sql.DB
+	db             *sqlx.DB
 	UserRepository *UserRepository
 }
 
@@ -23,7 +23,7 @@ func New(config *Config) *Store {
 func (s *Store) Open() error {
 	url := fmt.Sprintf(s.config.DatabaseURL)
 
-	db, err := sql.Open("postgres", url)
+	db, err := sqlx.Open("postgres", url)
 	if err != nil {
 		return err
 	}
@@ -35,22 +35,22 @@ func (s *Store) Open() error {
 
 	s.db = db
 
-	c := make(chan *model.User)
-	go func() {
-
-		user, err := s.User().Create(&model.User{
-			Email:    "mail@gmail.com",
-			Password: "1234567",
-		})
-
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		c <- user
-
-	}()
-	fmt.Println(<-c)
+	// c := make(chan *model.User)
+	// go func() {
+	//
+	// 	user, err := s.User().Create(&model.User{
+	// 		Email:    "mail@gmail.com",
+	// 		Password: "1234567",
+	// 	})
+	//
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 	}
+	//
+	// 	c <- user
+	//
+	// }()
+	// fmt.Println(<-c)
 
 	return nil
 }

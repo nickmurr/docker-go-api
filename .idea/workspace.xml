@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44985cce-6066-45da-9f6d-af91bfac2eb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/model/validations.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/migrator/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/migrator/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrator/migrations/20200120114343_create_users.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrator/migrations/1_create_users.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrator/migrations/20200120114343_create_users.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/postgres-db/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/postgres-db/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/server/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/model/user_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/user_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/store/store.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/store.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/store_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/store_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/store/userrepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/userrepository.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,55 +86,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh">
+        <entry file="file://$PROJECT_DIR$/server/store/userrepository.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="324">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/postgres-db/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/server/model/user.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="270">
+              <caret line="19" column="87" selection-start-line="19" selection-start-column="87" selection-end-line="19" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+        <entry file="file://$PROJECT_DIR$/server/store/userrepository_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="144">
+              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/store/store_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/migrator/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/server/model/user_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="355">
+              <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql">
+        <entry file="file://$PROJECT_DIR$/server/model/validations.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="5" />
+            <state relative-caret-position="126">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.down.sql">
+        <entry file="file://$PROJECT_DIR$/server/store/store.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-end-column="17" />
+            <state relative-caret-position="36">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#15#238#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,21 +179,23 @@
         <option value="$PROJECT_DIR$/server/Dockerfile" />
         <option value="$PROJECT_DIR$/server/model/testing.go" />
         <option value="$PROJECT_DIR$/server/store/userrepository_test.go" />
-        <option value="$PROJECT_DIR$/server/model/user.go" />
-        <option value="$PROJECT_DIR$/server/model/user_test.go" />
-        <option value="$PROJECT_DIR$/server/store/userrepository.go" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/server/store/store_test.go" />
         <option value="$PROJECT_DIR$/migrator/migrations/2_create_restapi_test_up.sql" />
         <option value="$PROJECT_DIR$/migrator/migrations/2_create_restapi_test_down.sql" />
-        <option value="$PROJECT_DIR$/server/store/store.go" />
         <option value="$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql" />
         <option value="$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.up.sql" />
         <option value="$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.down.sql" />
+        <option value="$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh" />
         <option value="$PROJECT_DIR$/postgres-db/Dockerfile" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh" />
+        <option value="$PROJECT_DIR$/server/store/store.go" />
+        <option value="$PROJECT_DIR$/migrator/migrations/2_create_database_restapi_test.up.sql" />
         <option value="$PROJECT_DIR$/migrator/Dockerfile" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/server/store/userrepository.go" />
+        <option value="$PROJECT_DIR$/server/model/validations.go" />
+        <option value="$PROJECT_DIR$/server/model/user.go" />
+        <option value="$PROJECT_DIR$/server/model/user_test.go" />
       </list>
     </option>
   </component>
@@ -214,18 +223,19 @@
             <path>
               <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
-              <item name="migrator" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
-              <item name="migrator" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
-              <item name="postgres-db" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -243,7 +253,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/migrator/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -251,6 +261,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Nikita\Mine\go\docker-examples\server" />
       <recent name="D:\Nikita\Mine\go\docker-examples\migrator\migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -269,18 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.postgres-db/Dockerfile">
-    <configuration name="TestApiServer_HandleHello in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="docker-examples" />
-      <working_directory value="$PROJECT_DIR$/server/internal/app/apiserver" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/nickmurr/go-http-rest-api/internal/app/apiserver" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestApiServer_HandleHello$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.go test github.com/nickmurr/go-http-rest-api/model">
     <configuration name="TestUserRepository_Create in github.com/nickmurr/go-http-rest-api/store" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="docker-examples" />
       <working_directory value="$PROJECT_DIR$/server/store" />
@@ -290,17 +290,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestUserRepository_Create$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestUser_BeforeCreate in github.com/nickmurr/go-http-rest-api/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="docker-examples" />
-      <working_directory value="$PROJECT_DIR$/server/model" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/nickmurr/go-http-rest-api/model" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestUser_BeforeCreate$" />
       <method v="2" />
     </configuration>
     <configuration name="TestUser_Validate in github.com/nickmurr/go-http-rest-api/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -314,6 +303,22 @@
       <pattern value="^TestUser_Validate$" />
       <method v="2" />
     </configuration>
+    <configuration name="go test github.com/nickmurr/go-http-rest-api/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="docker-examples" />
+      <working_directory value="$PROJECT_DIR$/server/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/nickmurr/go-http-rest-api/model" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="migrate-restapitest" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="migrate-restapitest" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <configuration name="postgres-db/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings>
@@ -324,18 +329,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.go test github.com/nickmurr/go-http-rest-api/model" />
+        <item itemvalue="Makefile.migrate-restapitest" />
         <item itemvalue="Docker.postgres-db/Dockerfile" />
         <item itemvalue="Go Test.TestUser_Validate in github.com/nickmurr/go-http-rest-api/model" />
         <item itemvalue="Go Test.TestUserRepository_Create in github.com/nickmurr/go-http-rest-api/store" />
-        <item itemvalue="Go Test.TestApiServer_HandleHello in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" />
-        <item itemvalue="Go Test.TestUser_BeforeCreate in github.com/nickmurr/go-http-rest-api/model" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestUserRepository_Create_in_github_com_nickmurr_go-http-rest-api_store - 2020.01.21 at 04h 16m 31s.xml">
-      <configuration name="TestUserRepository_Create in github.com/nickmurr/go-http-rest-api/store" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestUserRepository_Create_in_github_com_nickmurr_go-http-rest-api_store - 2020.01.21 at 04h 16m 44s.xml">
       <configuration name="TestUserRepository_Create in github.com/nickmurr/go-http-rest-api/store" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -363,9 +365,13 @@
     <history-entry file="TestUser_Validate_in_github_com_nickmurr_go-http-rest-api_model - 2020.01.21 at 18h 35m 43s.xml">
       <configuration name="TestUser_Validate in github.com/nickmurr/go-http-rest-api/model" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="go_test_github_com_nickmurr_go-http-rest-api_model - 2020.01.22 at 00h 43m 38s.xml">
+      <configuration name="go test github.com/nickmurr/go-http-rest-api/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27573332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -373,7 +379,7 @@
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -382,7 +388,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="GraphQL" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31960997" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.31960997" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -403,13 +409,6 @@
     <SUITE FILE_PATH="coverage/docker_examples$TestUserRepository_Create_in_github_com_nickmurr_go_http_rest_api_store.out" NAME="TestUserRepository_Create in github.com/nickmurr/go-http-rest-api/store Coverage Results" MODIFIED="1579565828094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/cmd/apiserver/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/configs/apiserver.toml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -487,75 +486,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/model/user.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#15#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/store/userrepository.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="85" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/model/user_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding>
-            <element signature="e#486#1188#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/store/store_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_restapi_test.down.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_restapi_test.up.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/store/userrepository_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_restapi_test.down.sql" />
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_restapi_test.up.sql" />
     <entry file="file://$PROJECT_DIR$/server/model/testing.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -563,17 +495,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/store/store.go">
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.up.sql" />
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.down.sql" />
+    <entry file="file://$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql">
+    <entry file="file://$PROJECT_DIR$/server/cmd/apiserver/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" />
+        <state relative-caret-position="396">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postgres-db/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -584,45 +525,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.up.sql">
+    <entry file="file://$PROJECT_DIR$/server/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/migrations/1_create_users.up.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_database_restapi_test.up.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/2_create_db_restapi_test.down.sql">
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/postgres-db/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state>
+          <caret selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="472">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/postgres-db/create-multiple-postgresql-databases.sh">
+    <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="36">
+          <caret line="2" column="140" lean-forward="true" selection-start-line="2" selection-start-column="140" selection-end-line="2" selection-end-column="140" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/migrator/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="72">
+          <caret line="4" column="117" selection-start-line="4" selection-start-column="117" selection-end-line="4" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/store/store.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#15#238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/store/userrepository.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/model/validations.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/model/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="87" selection-start-line="19" selection-start-column="87" selection-end-line="19" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/store/store_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/store/userrepository_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/model/user_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
         </state>
       </provider>
     </entry>

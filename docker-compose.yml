@@ -7,8 +7,8 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker
-      - POSTGRES_MULTIPLE_DATABASES=restapi_test,postgres
-#      - POSTGRES_DB=postgres
+#      - POSTGRES_MULTIPLE_DATABASES=restapi_test
+      - POSTGRES_DB=postgres
       - DATABASE_HOST=postgres
     volumes:
       - data:/var/lib/postgresql/data
