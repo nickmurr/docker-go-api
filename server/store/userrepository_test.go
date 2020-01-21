@@ -1,7 +1,6 @@
 package store_test
 
 import (
-	"fmt"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store"
 	"github.com/stretchr/testify/assert"
@@ -9,7 +8,6 @@ import (
 )
 
 func TestUserRepository_Create(t *testing.T) {
-	fmt.Println(databaseURL)
 	s, teardown := store.TestStore(t, databaseURL)
 	defer teardown("users")
 
