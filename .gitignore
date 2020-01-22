@@ -1,3 +1,7 @@
 /server/apiserver
 *.exe
 node_modules
+.next
+client/.next/
+client/.next
+.next/
