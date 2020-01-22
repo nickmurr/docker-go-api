@@ -1,2 +1,3 @@
 /server/apiserver
 *.exe
+node_modules
