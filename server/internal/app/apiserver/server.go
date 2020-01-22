@@ -3,9 +3,12 @@ package apiserver
 import (
 	"encoding/json"
 	"errors"
+	jwtmiddleware "github.com/auth0/go-jwt-middleware"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store"
+
 	"github.com/sirupsen/logrus"
 	"net/http"
 )
@@ -17,7 +20,14 @@ type server struct {
 }
 
 var (
+	mySigningKey            = []byte("secret")
 	errIncorrentCredentials = errors.New("Incorrent credentials")
+	customJwtMiddleware     = jwtmiddleware.New(jwtmiddleware.Options{
+		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
+			return mySigningKey, nil
+		},
+		SigningMethod: jwt.SigningMethodHS256,
+	})
 )
 
 func newServer(store store.Store) *server {
@@ -36,6 +46,7 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *server) configureRouter() {
+
 	s.router.HandleFunc("/users", s.handleUsersCreate()).Methods("POST")
 	s.router.HandleFunc("/sessions", s.handleSessionsCreate()).Methods("POST")
 
@@ -88,7 +99,12 @@ func (s *server) handleSessionsCreate() http.HandlerFunc {
 			return
 		}
 
-		s.respond(w,r,http.StatusOK, nil)
+		token, _, err := u.TokenBack(mySigningKey)
+		if err != nil {
+			s.error(w, r, http.StatusBadRequest, err)
+		}
+
+		s.respond(w, r, http.StatusOK, token)
 	}
 }
 
@@ -98,7 +114,7 @@ func (s *server) error(w http.ResponseWriter, r *http.Request, code int, err err
 
 func (s *server) respond(w http.ResponseWriter, r *http.Request, code int, data interface{}) {
 	w.WriteHeader(code)
-	w.Header().Set("Content-Type", "application/json")
+
 	if data != nil {
 		_ = json.NewEncoder(w).Encode(data)
 	}
