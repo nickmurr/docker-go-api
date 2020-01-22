@@ -1,9 +1,11 @@
 package apiserver
 
 import (
+	"fmt"
 	"github.com/jmoiron/sqlx"
 	"github.com/nickmurr/go-http-rest-api/store/sqlstore"
 	"net/http"
+	"os"
 )
 
 func Start(config *Config) error {
@@ -16,8 +18,8 @@ func Start(config *Config) error {
 	defer db.Close()
 	store := sqlstore.New(db)
 	s := newServer(store)
-
-	return http.ListenAndServe(config.BindAddr, s)
+	fmt.Printf("Server running on port %v\n", os.Getenv("BIND_ADDR"))
+	return http.ListenAndServe(":5000", s)
 }
 
 func newDb(databaseURL string) (*sqlx.DB, error) {
