@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/bmizerany/assert"
+	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store/teststore"
 	"net/http"
 	"net/http/httptest"
@@ -49,9 +50,59 @@ func TestServer_HandleUsersCreate(t *testing.T) {
 			assert.Equal(t, tc.expectedCode, rec.Code)
 		})
 	}
+}
 
-	// rec := httptest.NewRecorder()
-	// req := httptest.NewRequest(http.MethodPost, "/users", nil)
-	// s.ServeHTTP(rec, req)
-	// assert.Equal(t, rec.Code, http.StatusOK)
+func TestServer_HandleSessionsCreate(t *testing.T) {
+	u := model.TestUser(t)
+	store := teststore.New()
+	_ = store.User().Create(u)
+	s := newServer(store)
+
+	testCases := []struct {
+		name         string
+		payload      interface{}
+		expectedCode int
+	}{
+		{
+			name: "valid",
+			payload: map[string]string{
+				"email":    u.Email,
+				"password": u.Password,
+			},
+			expectedCode: http.StatusOK,
+		},
+		{
+			name: "invalid payload",
+			payload: "payload",
+			expectedCode: http.StatusBadRequest,
+		},
+		{
+			name: "invalid email",
+			payload: map[string]string{
+				"email":   "invalid",
+				"password": u.Password,
+			},
+			expectedCode: http.StatusUnauthorized,
+		},
+		{
+			name: "invalid password",
+			payload: map[string]string{
+				"email":    u.Email,
+				"password": "invalid password",
+			},
+			expectedCode: http.StatusUnauthorized,
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			rec := httptest.NewRecorder()
+			b := &bytes.Buffer{}
+			_ = json.NewEncoder(b).Encode(tc.payload)
+			req, _ := http.NewRequest(http.MethodPost, "/sessions", b)
+			s.ServeHTTP(rec, req)
+			assert.Equal(t, tc.expectedCode, rec.Code)
+		})
+	}
+
 }

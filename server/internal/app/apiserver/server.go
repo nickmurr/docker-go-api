@@ -2,6 +2,7 @@ package apiserver
 
 import (
 	"encoding/json"
+	"errors"
 	"github.com/gorilla/mux"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store"
@@ -14,6 +15,10 @@ type server struct {
 	logger *logrus.Logger
 	store  store.Store
 }
+
+var (
+	errIncorrentCredentials = errors.New("Incorrent credentials")
+)
 
 func newServer(store store.Store) *server {
 	s := &server{
@@ -32,13 +37,8 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 func (s *server) configureRouter() {
 	s.router.HandleFunc("/users", s.handleUsersCreate()).Methods("POST")
-	s.router.HandleFunc("/", s.initial()).Methods("GET")
+	s.router.HandleFunc("/sessions", s.handleSessionsCreate()).Methods("POST")
 
-}
-
-func (s *server) initial() http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-	}
 }
 
 func (s *server) handleUsersCreate() http.HandlerFunc {
@@ -66,6 +66,29 @@ func (s *server) handleUsersCreate() http.HandlerFunc {
 		u.Sanitize()
 		s.respond(w, r, http.StatusCreated, u)
 
+	}
+}
+
+func (s *server) handleSessionsCreate() http.HandlerFunc {
+	type request struct {
+		Email    string `json:"email"`
+		Password string `json:"password"`
+	}
+
+	return func(w http.ResponseWriter, r *http.Request) {
+		req := &request{}
+		if err := json.NewDecoder(r.Body).Decode(req); err != nil {
+			s.error(w, r, http.StatusBadRequest, err)
+			return
+		}
+
+		u, err := s.store.User().FindByEmail(req.Email)
+		if err != nil || !u.ComparePassword(req.Password) {
+			s.error(w, r, http.StatusUnauthorized, errIncorrentCredentials)
+			return
+		}
+
+		s.respond(w,r,http.StatusOK, nil)
 	}
 }
 
