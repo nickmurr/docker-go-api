@@ -6,6 +6,7 @@ import (
 	jwtmiddleware "github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/sessions"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store"
 
@@ -13,11 +14,9 @@ import (
 	"net/http"
 )
 
-type server struct {
-	router *mux.Router
-	logger *logrus.Logger
-	store  store.Store
-}
+const (
+	sessionName = "go-docker-api"
+)
 
 var (
 	mySigningKey            = []byte("secret")
@@ -30,11 +29,19 @@ var (
 	})
 )
 
-func newServer(store store.Store) *server {
+type server struct {
+	router       *mux.Router
+	logger       *logrus.Logger
+	store        store.Store
+	sessionStore sessions.Store
+}
+
+func newServer(store store.Store, sessionStore sessions.Store) *server {
 	s := &server{
-		router: mux.NewRouter(),
-		logger: logrus.New(),
-		store:  store,
+		router:       mux.NewRouter(),
+		logger:       logrus.New(),
+		store:        store,
+		sessionStore: sessionStore,
 	}
 
 	s.configureRouter()
@@ -102,6 +109,17 @@ func (s *server) handleSessionsCreate() http.HandlerFunc {
 		token, _, err := u.TokenBack(mySigningKey)
 		if err != nil {
 			s.error(w, r, http.StatusBadRequest, err)
+		}
+
+		session, err := s.sessionStore.Get(r, sessionName)
+		if err != nil {
+			s.error(w, r, http.StatusInternalServerError, err)
+		}
+
+		session.Values["token"] = token
+		err = s.sessionStore.Save(r, w, session)
+		if err != nil {
+			s.error(w, r, http.StatusInternalServerError, err)
 		}
 
 		s.respond(w, r, http.StatusOK, token)

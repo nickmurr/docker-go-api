@@ -4281,7 +4281,7 @@ var Home = function Home(props) {
       lineNumber: 21
     },
     __self: this
-  }, "Token: ", _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(token.split('.'), ['\t'], '\t')));
+  }, "Token: ", _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(token.split('.'), null, '\t')));
 };
 
 Home.getInitialProps = function _callee(_ref) {

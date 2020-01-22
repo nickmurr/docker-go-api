@@ -69,7 +69,8 @@ func encryptString(s string) (string, error) {
 // 	return tokenString
 // }
 type Claims struct {
-	User string `json:"user"`
+	ID int `json:"user_id"`
+	Email string `json:"user_email"`
 	jwt.StandardClaims
 }
 
@@ -77,7 +78,8 @@ func (u *User) TokenBack(mySigningKey []byte) (string, time.Time, error) {
 	expirationTime := time.Now().Add(5 * time.Minute)
 	// Create the JWT claims, which includes the username and expiry time
 	claims := &Claims{
-		User: u.Email,
+		ID:   u.ID,
+		Email: u.Email,
 		StandardClaims: jwt.StandardClaims{
 			// In JWT, the expiry time is expressed as unix milliseconds
 			ExpiresAt: expirationTime.Unix(),

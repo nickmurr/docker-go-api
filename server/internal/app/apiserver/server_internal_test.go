@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/bmizerany/assert"
+	"github.com/gorilla/sessions"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store/teststore"
 	"net/http"
@@ -12,7 +13,7 @@ import (
 )
 
 func TestServer_HandleUsersCreate(t *testing.T) {
-	s := newServer(teststore.New())
+	s := newServer(teststore.New(), sessions.NewCookieStore([]byte("secret")))
 	testCases := []struct {
 		name         string
 		payload      interface{}
@@ -56,7 +57,7 @@ func TestServer_HandleSessionsCreate(t *testing.T) {
 	u := model.TestUser(t)
 	store := teststore.New()
 	_ = store.User().Create(u)
-	s := newServer(store)
+	s := newServer(store, sessions.NewCookieStore([]byte("secret")))
 
 	testCases := []struct {
 		name         string
@@ -72,14 +73,14 @@ func TestServer_HandleSessionsCreate(t *testing.T) {
 			expectedCode: http.StatusOK,
 		},
 		{
-			name: "invalid payload",
-			payload: "payload",
+			name:         "invalid payload",
+			payload:      "payload",
 			expectedCode: http.StatusBadRequest,
 		},
 		{
 			name: "invalid email",
 			payload: map[string]string{
-				"email":   "invalid",
+				"email":    "invalid",
 				"password": u.Password,
 			},
 			expectedCode: http.StatusUnauthorized,

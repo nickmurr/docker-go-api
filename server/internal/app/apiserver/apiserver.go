@@ -2,6 +2,7 @@ package apiserver
 
 import (
 	"fmt"
+	"github.com/gorilla/sessions"
 	"github.com/jmoiron/sqlx"
 	"github.com/nickmurr/go-http-rest-api/store/sqlstore"
 	"net/http"
@@ -17,7 +18,8 @@ func Start(config *Config) error {
 
 	defer db.Close()
 	store := sqlstore.New(db)
-	s := newServer(store)
+	sessionStore := sessions.NewCookieStore([]byte("secret"))
+	s := newServer(store, sessionStore)
 	fmt.Printf("Server running on port %v\n", os.Getenv("BIND_ADDR"))
 	return http.ListenAndServe(":5000", s)
 }

@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44985cce-6066-45da-9f6d-af91bfac2eb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/cache/autodll-webpack-plugin/development_instance_0_6de6a87a1c5ba75870324cbece854c5f/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/cache/autodll-webpack-plugin/development_instance_0_6de6a87a1c5ba75870324cbece854c5f/stats.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/cache/autodll-webpack-plugin/package.json.hash" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/cache/autodll-webpack-plugin/package.json.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/development/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/development/pages/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/webpack/a0ce5d45ffe20964089b.hot-update.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/webpack/a0ce5d45ffe20964089b.hot-update.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/internal/app/apiserver/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/app/apiserver/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/user.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,14 +79,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/pages/index.tsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/model/user.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="20" column="61" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -160,12 +173,8 @@
         <option value="$PROJECT_DIR$/server/cmd/apiserver/main.go" />
         <option value="$PROJECT_DIR$/server/internal/app/apiserver/apiserver_internal_test.go" />
         <option value="$PROJECT_DIR$/Makefile" />
-        <option value="$PROJECT_DIR$/server/model/user.go" />
         <option value="$PROJECT_DIR$/server/configs/apiserver.toml" />
-        <option value="$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go" />
         <option value="$PROJECT_DIR$/server/internal/app/apiserver/config.go" />
-        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server.go" />
-        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" />
         <option value="$PROJECT_DIR$/client/Dockerfile" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/nginx/default.conf" />
@@ -173,6 +182,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/pages/index.tsx" />
+        <option value="$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go" />
+        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" />
+        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server.go" />
+        <option value="$PROJECT_DIR$/server/model/user.go" />
       </list>
     </option>
   </component>
@@ -201,13 +214,28 @@
             <path>
               <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
               <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="docker-examples" type="b2602c69:ProjectViewProjectNode" />
+              <item name="docker-examples" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="apiserver" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -232,13 +260,13 @@
     <property name="ts.external.directory.path" value="D:\Nikita\Mine\go\docker-examples\client\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Nikita\Mine\go\docker-examples\server" />
-      <recent name="D:\Nikita\Mine\go\docker-examples\migrator\migrations" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Nikita\Mine\go\docker-examples\server\store\sqlstore" />
       <recent name="D:\Nikita\Mine\go\docker-examples" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Nikita\Mine\go\docker-examples\server" />
+      <recent name="D:\Nikita\Mine\go\docker-examples\migrator\migrations" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -319,18 +347,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 05m 26s.xml">
-      <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestServer_HandleUsersCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 06m 22s.xml">
-      <configuration name="TestServer_HandleUsersCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestServer_HandleUsersCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 11m 24s.xml">
-      <configuration name="TestServer_HandleUsersCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 11m 29s.xml">
-      <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 13m 44s.xml">
       <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -349,6 +365,18 @@
     <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 32m 12s.xml">
       <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestServer_HandleUsersCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 21h 10m 17s.xml">
+      <configuration name="TestServer_HandleUsersCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 21h 10m 22s.xml">
+      <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestServer_HandleUsersCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 21h 18m 04s.xml">
+      <configuration name="TestServer_HandleUsersCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 21h 18m 08s.xml">
+      <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,12 +389,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27893335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32936078" />
@@ -381,6 +407,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32936078" />
       <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31960997" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="14" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -558,27 +585,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/model/user.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-          <folding>
-            <element signature="e#15#145#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -631,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/config.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -649,23 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1220">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="115" column="23" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
-          <folding>
-            <element signature="e#19#331#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -729,11 +715,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/pages/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+        <state relative-caret-position="180">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrator/migrations/1_create_users.up.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/apiserver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="61" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="59" column="67" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/model/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
         </state>
       </provider>
     </entry>
