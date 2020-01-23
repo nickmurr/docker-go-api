@@ -1,6 +1,7 @@
 package apiserver
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	jwtmiddleware "github.com/auth0/go-jwt-middleware"
@@ -15,12 +16,14 @@ import (
 )
 
 const (
-	sessionName = "go-docker-api"
+	sessionName        = "go-docker-api"
+	ctxKeyUser  ctxKey = iota
 )
 
 var (
-	mySigningKey            = []byte("secret")
 	errIncorrentCredentials = errors.New("Incorrent credentials")
+	errUnathorized          = errors.New("Unathorized")
+	mySigningKey            = []byte("secret")
 	customJwtMiddleware     = jwtmiddleware.New(jwtmiddleware.Options{
 		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
 			return mySigningKey, nil
@@ -28,6 +31,8 @@ var (
 		SigningMethod: jwt.SigningMethodHS256,
 	})
 )
+
+type ctxKey int8
 
 type server struct {
 	router       *mux.Router
@@ -53,10 +58,34 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *server) configureRouter() {
-
 	s.router.HandleFunc("/users", s.handleUsersCreate()).Methods("POST")
 	s.router.HandleFunc("/sessions", s.handleSessionsCreate()).Methods("POST")
+}
 
+func (s *server) authenticateUser(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		session, err := s.sessionStore.Get(r, sessionName)
+		if err != nil {
+			s.error(w, r, http.StatusInternalServerError, err)
+			return
+		}
+		token, ok := session.Values["token"].(string)
+		if !ok {
+			s.error(w, r, http.StatusUnauthorized, errUnathorized)
+		}
+
+		userId, err := model.CheckJwtToken(token)
+		if err != nil {
+			s.error(w, r, http.StatusUnauthorized, errUnathorized)
+		}
+
+		u, err := s.store.User().FindById(userId)
+		if err != nil {
+			s.error(w, r, http.StatusUnauthorized, errUnathorized)
+		}
+
+		next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), ctxKeyUser, u)))
+	})
 }
 
 func (s *server) handleUsersCreate() http.HandlerFunc {
