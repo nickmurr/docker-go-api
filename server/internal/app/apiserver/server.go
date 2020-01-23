@@ -4,12 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	jwtmiddleware "github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
-	"github.com/gorilla/sessions"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 	"net/http"
@@ -23,7 +24,7 @@ const (
 var (
 	errIncorrentCredentials = errors.New("Incorrent credentials")
 	errUnathorized          = errors.New("Unathorized")
-	mySigningKey            = []byte("secret")
+	mySigningKey            = []byte("secret-go-api")
 	customJwtMiddleware     = jwtmiddleware.New(jwtmiddleware.Options{
 		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
 			return mySigningKey, nil
@@ -35,18 +36,16 @@ var (
 type ctxKey int8
 
 type server struct {
-	router       *mux.Router
-	logger       *logrus.Logger
-	store        store.Store
-	sessionStore sessions.Store
+	router *mux.Router
+	logger *logrus.Logger
+	store  store.Store
 }
 
-func newServer(store store.Store, sessionStore sessions.Store) *server {
+func newServer(store store.Store) *server {
 	s := &server{
-		router:       mux.NewRouter(),
-		logger:       logrus.New(),
-		store:        store,
-		sessionStore: sessionStore,
+		router: mux.NewRouter(),
+		logger: logrus.New(),
+		store:  store,
 	}
 
 	s.configureRouter()
@@ -64,14 +63,17 @@ func (s *server) configureRouter() {
 
 func (s *server) authenticateUser(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		session, err := s.sessionStore.Get(r, sessionName)
-		if err != nil {
-			s.error(w, r, http.StatusInternalServerError, err)
-			return
+		var token string
+		w.Header().Add("Content-Type", "application/json")
+		token = w.Header().Get("Authorization")
+		// tokens, ok := r.Header["Authorization"]
+		if  len(token) >= 1 {
+			token = strings.TrimPrefix(token, "Bearer ")
 		}
-		token, ok := session.Values["token"].(string)
-		if !ok {
+		fmt.Println("token:", token)
+		if token == "" {
 			s.error(w, r, http.StatusUnauthorized, errUnathorized)
+			return
 		}
 
 		userId, err := model.CheckJwtToken(token)
@@ -140,16 +142,16 @@ func (s *server) handleSessionsCreate() http.HandlerFunc {
 			s.error(w, r, http.StatusBadRequest, err)
 		}
 
-		session, err := s.sessionStore.Get(r, sessionName)
-		if err != nil {
-			s.error(w, r, http.StatusInternalServerError, err)
-		}
-
-		session.Values["token"] = token
-		err = s.sessionStore.Save(r, w, session)
-		if err != nil {
-			s.error(w, r, http.StatusInternalServerError, err)
-		}
+		// session, err := s.sessionStore.Get(r, sessionName)
+		// if err != nil {
+		// 	s.error(w, r, http.StatusInternalServerError, err)
+		// }
+		//
+		// session.Values["token"] = token
+		// err = s.sessionStore.Save(r, w, session)
+		// if err != nil {
+		// 	s.error(w, r, http.StatusInternalServerError, err)
+		// }
 
 		s.respond(w, r, http.StatusOK, token)
 	}

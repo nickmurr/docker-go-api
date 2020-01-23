@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	jwtSecret = []byte("secret")
+	jwtSecret = []byte("secret-go-api")
 )
 
 // User ...

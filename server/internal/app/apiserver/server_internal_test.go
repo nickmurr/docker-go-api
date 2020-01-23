@@ -5,8 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/bmizerany/assert"
-	"github.com/gorilla/securecookie"
-	"github.com/gorilla/sessions"
 	"github.com/nickmurr/go-http-rest-api/model"
 	"github.com/nickmurr/go-http-rest-api/store/teststore"
 	"net/http"
@@ -20,7 +18,7 @@ func TestServer_AuthenticateUser(t *testing.T) {
 
 	_ = store.User().Create(u)
 
-	secretKey := []byte("secret")
+	secretKey := []byte("secret-go-api")
 	token, _, err := u.TokenBack(secretKey)
 	if err != nil {
 		fmt.Println(err)
@@ -28,26 +26,21 @@ func TestServer_AuthenticateUser(t *testing.T) {
 
 	testCases := []struct {
 		name         string
-		cookieValue  map[interface{}]interface{}
+		token        string
 		expectedCode int
 	}{
 		{
-			name: "authenticated",
-			cookieValue: map[interface{}]interface{}{
-				"token": token,
-			},
+			name:         "authenticated",
+			token:        token,
 			expectedCode: http.StatusOK,
 		},
 		{
-			name: "not authenticated",
-			cookieValue: map[interface{}]interface{}{
-				"token": nil,
-			},
+			name:         "not authenticated",
+			token:        "",
 			expectedCode: http.StatusUnauthorized,
 		},
 	}
-	s := newServer(store, sessions.NewCookieStore(secretKey))
-	sc := securecookie.New(secretKey, nil)
+	s := newServer(store)
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
@@ -56,8 +49,7 @@ func TestServer_AuthenticateUser(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			rec := httptest.NewRecorder()
 			req, _ := http.NewRequest(http.MethodGet, "/", nil)
-			cookieStr, _ := sc.Encode(sessionName, tc.cookieValue)
-			req.Header.Set("Cookie", fmt.Sprintf("%s=%s", sessionName, cookieStr))
+			rec.Header().Add("Authorization", fmt.Sprintf("Bearer %s", tc.token))
 			s.authenticateUser(handler).ServeHTTP(rec, req)
 			assert.Equal(t, tc.expectedCode, rec.Code)
 		})
@@ -65,7 +57,7 @@ func TestServer_AuthenticateUser(t *testing.T) {
 }
 
 func TestServer_HandleUsersCreate(t *testing.T) {
-	s := newServer(teststore.New(), sessions.NewCookieStore([]byte("secret")))
+	s := newServer(teststore.New())
 	testCases := []struct {
 		name         string
 		payload      interface{}
@@ -109,7 +101,7 @@ func TestServer_HandleSessionsCreate(t *testing.T) {
 	u := model.TestUser(t)
 	store := teststore.New()
 	_ = store.User().Create(u)
-	s := newServer(store, sessions.NewCookieStore([]byte("secret")))
+	s := newServer(store)
 
 	testCases := []struct {
 		name         string
