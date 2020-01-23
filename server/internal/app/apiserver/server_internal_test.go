@@ -28,19 +28,19 @@ func TestServer_AuthenticateUser(t *testing.T) {
 
 	testCases := []struct {
 		name         string
-		cookiValue   map[interface{}]interface{}
+		cookieValue  map[interface{}]interface{}
 		expectedCode int
 	}{
 		{
 			name: "authenticated",
-			cookiValue: map[interface{}]interface{}{
+			cookieValue: map[interface{}]interface{}{
 				"token": token,
 			},
 			expectedCode: http.StatusOK,
 		},
 		{
 			name: "not authenticated",
-			cookiValue: map[interface{}]interface{}{
+			cookieValue: map[interface{}]interface{}{
 				"token": nil,
 			},
 			expectedCode: http.StatusUnauthorized,
@@ -56,7 +56,7 @@ func TestServer_AuthenticateUser(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			rec := httptest.NewRecorder()
 			req, _ := http.NewRequest(http.MethodGet, "/", nil)
-			cookieStr, _ := sc.Encode(sessionName, tc.cookiValue)
+			cookieStr, _ := sc.Encode(sessionName, tc.cookieValue)
 			req.Header.Set("Cookie", fmt.Sprintf("%s=%s", sessionName, cookieStr))
 			s.authenticateUser(handler).ServeHTTP(rec, req)
 			assert.Equal(t, tc.expectedCode, rec.Code)

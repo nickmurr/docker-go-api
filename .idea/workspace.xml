@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44985cce-6066-45da-9f6d-af91bfac2eb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/build-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/server/pages-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/server/static/development/pages/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/development/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/development/pages/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/.next/static/runtime/webpack.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.next/static/webpack/a0ce5d45ffe20964089b.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/internal/app/apiserver/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/app/apiserver/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/sqlstore/userrepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/sqlstore/userrepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/sqlstore/userrepository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/sqlstore/userrepository_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/teststore/userrepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/teststore/userrepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/store/teststore/userrepository_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/store/teststore/userrepository_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1660">
-              <caret line="147" column="29" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="29" />
+            <state relative-caret-position="18">
+              <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -114,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/model/user.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="117" column="25" lean-forward="true" selection-start-line="117" selection-start-column="25" selection-end-line="117" selection-end-column="25" />
+            <state relative-caret-position="544">
+              <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
               <folding>
                 <element signature="e#15#184#0" expanded="true" />
               </folding>
@@ -123,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+            <state relative-caret-position="18">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -203,8 +186,8 @@
         <option value="$PROJECT_DIR$/server/store/teststore/userrepository.go" />
         <option value="$PROJECT_DIR$/server/store/teststore/userrepository_test.go" />
         <option value="$PROJECT_DIR$/server/model/user.go" />
-        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server.go" />
         <option value="$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go" />
+        <option value="$PROJECT_DIR$/server/internal/app/apiserver/server.go" />
       </list>
     </option>
   </component>
@@ -373,9 +356,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 17m 56s.xml">
-      <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestServer_HandleSessionsCreate_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.22 at 16h 18m 27s.xml">
       <configuration name="TestServer_HandleSessionsCreate in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -403,6 +383,9 @@
     <history-entry file="TestUserRepository_FindById_in_github_com_nickmurr_go-http-rest-api_store_teststore - 2020.01.23 at 21h 20m 16s.xml">
       <configuration name="TestUserRepository_FindById in github.com/nickmurr/go-http-rest-api/store/teststore" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestServer_AuthenticateUser_in_github_com_nickmurr_go-http-rest-api_internal_app_apiserver - 2020.01.23 at 22h 02m 37s.xml">
+      <configuration name="TestServer_AuthenticateUser in github.com/nickmurr/go-http-rest-api/internal/app/apiserver" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,7 +400,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28213334" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28213334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32936078" />
@@ -432,7 +415,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="GraphQL" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31960997" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31960997" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="14" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -756,10 +739,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/model/user.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="117" column="25" lean-forward="true" selection-start-line="117" selection-start-column="25" selection-end-line="117" selection-end-column="25" />
+        <state relative-caret-position="544">
+          <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
           <folding>
             <element signature="e#15#184#0" expanded="true" />
           </folding>
@@ -768,15 +758,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1660">
-          <caret line="147" column="29" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/internal/app/apiserver/server_internal_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        <state relative-caret-position="18">
+          <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
         </state>
       </provider>
     </entry>
