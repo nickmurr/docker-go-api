@@ -49,7 +49,7 @@ func TestServer_AuthenticateUser(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			rec := httptest.NewRecorder()
 			req, _ := http.NewRequest(http.MethodGet, "/", nil)
-			rec.Header().Add("Authorization", fmt.Sprintf("Bearer %s", tc.token))
+			req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", tc.token))
 			s.authenticateUser(handler).ServeHTTP(rec, req)
 			assert.Equal(t, tc.expectedCode, rec.Code)
 		})
